@@ -116,3 +116,126 @@
 //   console.log('your number = ' + number);
 // } else {
 // }
+
+// let max = number[0];
+// let min = number[0];
+
+// for (let i = 0; i < number.length; i++) {
+//   if (number[i] > max) max = number[i];
+//   if (number[i] < min) min = number[i];
+// }
+
+// let sum = 0;
+
+// for (let i = 0; i < number.length; i++) {
+//   sum = sum + number[i];
+// }
+
+// let average = sum / number.length;
+// console.log(`the max num = ${max}`);
+// console.log(`the min num = ${min}`);
+// console.log(`the sum = ${sum}`);
+// console.log(`the average = ${average}`);
+
+//challenge 3
+// const prompt = require('prompt-sync')();
+
+// let number = [];
+
+// for (let i = 0; i < 5; i++) {
+//   let input = prompt(`input number ${i + 1}: `);
+
+//   let num = parseInt(input);
+//   if (isNaN(num)) {
+//     console.log('only number');
+//   } else {
+//     number.push(num);
+//   }
+// }
+
+// let sum = 0;
+// let max = number[0];
+// let min = number[0];
+
+// for (let i = 0; i < number.length; i++) {
+//   sum = sum + number[i];
+//   if (number[i] > max) max = number[i];
+//   if (number[i] < min) min = number[1];
+// }
+
+// let average = sum / number.length;
+// console.log(`your numbers = ${number}`);
+// console.log(`sum = ${sum}`);
+// console.log(`max = ${max}`);
+// console.log(`min = ${min}`);
+// console.log(`average = ${average}`);
+
+//challenge 4
+// const prompt = require('prompt-sync')();
+// let input = prompt(`input your score: `);
+
+// let score = parseInt(input);
+// if (score >= 90) {
+//   console.log('A (Brilliant)');
+// } else if (score >= 80) {
+//   console.log('B (Good)');
+// } else if (score >= 70) {
+//   console.log('C (Not bad)');
+// } else if (score >= 60) {
+//   console.log('D (Warning)');
+// } else {
+//   console.log('F (failed)');
+// }
+
+// challenge 5
+// let str = 'hello';
+// let reverse = '';
+
+// for (let i = str.length - 1; i >= 0; i--) {
+//   reverse = reverse + str[i];
+// }
+
+// console.log(reverse);
+
+//challenge 6
+const prompt = require('prompt-sync')();
+console.log('input number (1-10)');
+console.log('input e for exit');
+let score = 0;
+let lives = 10;
+console.log(`HP = ${lives}, SCORE = ${score}`);
+let number = Math.floor(Math.random() * 3) + 1;
+
+for (let i = 0; i < 10; i++) {
+  let input = prompt(`input any number ${i + 1}: `);
+
+  if (input === 'e') {
+    console.log('thank you');
+    break;
+  }
+
+  let num = parseInt(input);
+
+  if (isNaN(num)) {
+    console.log('only number please');
+    i--;
+  } else if (num === number) {
+    score = score + 1;
+    console.log("That's right");
+    console.log(`HP = ${lives}, SCORE = ${score}`);
+    number = Math.floor(Math.random() * 3) + 1;
+  } else if (num > number) {
+    console.log('too high');
+    lives = lives - 1;
+    console.log(`HP = ${lives}, SCORE = ${score}`);
+  } else if (num < number) {
+    console.log('too low');
+    lives = lives - 1;
+    console.log(`HP = ${lives}, SCORE = ${score}`);
+  }
+
+  if (lives === 0) {
+    console.log('game over');
+    break;
+  }
+}
