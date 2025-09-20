@@ -1,3 +1,5 @@
+//Quest: Display Current Day and time
+
 let time = new Date();
 // console.log(date);
 
@@ -12,7 +14,7 @@ let dayName = [
 ];
 
 let day = dayName[time.getDay()];
-console.log(day);
+console.log('Today is : ' + day);
 
 let monthName = [
   'January',
@@ -36,10 +38,16 @@ let month = monthName[time.getMonth()];
 let year = time.getFullYear();
 
 let hour = time.getHours();
+hour = hour % 12 || 12;
 hour = hour < 10 ? '0' + hour : hour;
+// console.log(hour);
+
+let timeFormat = hour <= 12 ? 'AM' : 'PM';
+
 let minutes = time.getMinutes();
 minutes = minutes < 10 ? '0' + minutes : minutes;
 
 let seconds = time.getSeconds();
 seconds = seconds < 10 ? '0' + seconds : seconds;
-console.log(`${day}, ${date}/${month}/${year}, ${hour}:${minutes}:${seconds}`);
+
+console.log(`Current time: ${hour} ${timeFormat} : ${minutes} : ${seconds}`);

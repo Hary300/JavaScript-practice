@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 id="text">Click print to print the current window</h1>
+    <button id="printBtn">Print</button>
+    <button id="changeBtn">Change</button>
+
+    <script>
+      // Print Current window contents
+      let btn1 = document.getElementById('printBtn');
+      btn1.addEventListener('click', () => {
+        window.print();
+      });
+
+      let btn2 = document.getElementById('changeBtn');
+      let text = document.getElementById('text');
+
+      let oriText = text.textContent;
+
+      btn2.addEventListener('click', () => {
+        if (text.textContent === oriText) {
+          text.textContent = 'Hello there';
+        } else {
+          text.textContent = oriText;
+        }
+      });
+    </script>
+  </body>
+</html>
