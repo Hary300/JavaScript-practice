@@ -295,22 +295,63 @@ console.log('==========');
 
 // method/function inside the object
 //this refers to this object
-let laptop2 = {
-  cpu: 'i7',
-  ram: 16,
-  brand: 'HP',
-  greet: function () {
-    console.log(this.cpu);
-  },
+// let laptop2 = {
+//   cpu: 'i7',
+//   ram: 16,
+//   brand: 'HP',
+//   greet: function () {
+//     console.log(this.cpu);
+//   },
+// };
+
+// let laptop1 = {
+//   cpu: 'i9',
+//   ram: 16,
+//   brand: 'HP',
+//   greet: function () {
+//     console.log(this.cpu);
+//   },
+// };
+
+// laptop2.greet();
+
+// console.log('==========');
+
+let add = (a, b) => {
+  return a + b;
 };
 
-let laptop1 = {
-  cpu: 'i9',
-  ram: 16,
-  brand: 'HP',
-  greet: function () {
-    console.log(this.cpu);
-  },
-};
+console.log(add(3, 5));
 
-laptop2.greet();
+// console.log('==========');
+
+let isEven = (num) => {
+  if (num % 2 === 0) {
+    return true;
+  } else {
+    return false;
+  }
+};
+console.log(isEven(4));
+console.log(isEven(7));
+
+// console.log('==========');
+// let num = [1, 2, 3, 4, 5, 6];
+
+// let filterEvenNumbers = () => {
+//   let even = [];
+//   for (let i = 0; i <= num.length - 1; i++) {
+//     if (num[i] % 2 === 0) even.push(num[i]);
+//   }
+//   return even;
+// };
+
+// console.log(filterEvenNumbers());
+
+// simpler version
+
+let num = [1, 2, 3, 4, 5, 6];
+
+let filterEvenNumbers = num.filter(num % 2 === 0);
+
+console.log(filterEvenNumbers);
